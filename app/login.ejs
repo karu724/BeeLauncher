@@ -1,0 +1,59 @@
+<div id="loginContainer" style="display: none;">
+    <img id="loginbackground" src="assets/images/loginbackground.png"/>
+    <div id="loginHello">
+        <span id="loginWelcome1">꿀벌온라인</span>
+        <span id="loginWelcome2">에</span>
+        <Span id="loginWelcome3">오신것을 환영합니다!</Span>
+        <span id="loginWelcome4">Welcome to HoneyOnline</span>
+    </div>
+    <div id="loginCancelContainer" style="display: none;">
+        <button id="loginCancelButton">
+            <div id="loginCancelIcon"><</div>
+            <span id="loginCancelText">뒤로가기</span>
+        </button>
+    </div>
+    <div id="loginContent">
+        <form id="loginForm">
+            <img id="loginImageSeal" src="assets/images/SealCircle.png"/>
+            <span id="loginSubheader1">게임시작</span>
+            <span id="loginSubheader2">을</span>
+            <span id="loginSubheader3">위해서,</span>
+            <span id="loginSubheader4">먼저</span>
+            <span id="loginSubheader5">마크 계정</span>
+            <span id="loginSubheader6">을</span>
+            <span id="loginSubheader7">로그인</span>
+            <span id="loginSubheader8">해주세요!</span>
+
+            <div class="loginFieldContainer">
+                <img id="profileSVG" src="./assets/images/mail.png"></img>
+                <span class="loginErrorSpan" id="loginEmailError">* Invalid Value</span>
+                <input id="loginUsername" class="loginField" type="text" placeholder="EMAIL"/>
+            </div>
+            <div class="loginFieldContainer">
+                <img id="lockSVG" src="./assets/images/key.png"></img>
+                <span class="loginErrorSpan" id="loginPasswordError">* Required</span>
+                <input id="loginPassword" class="loginField" type="password" placeholder="PASSWORD"/>
+            </div>
+            <div id="loginOptions">
+                <span class="loginSpanDim">
+                    <a href="https://minecraft.net/password/forgot/">비밀번호 찾기</a>
+                </span>
+                <label id="checkmarkContainer">
+                    <input id="loginRememberOption" type="checkbox" checked>
+                    <span id="loginRememberText" class="loginSpanDim">로그인 유지</span>
+                    <span class="loginCheckmark"></span>
+                </label>
+            </div>
+            <button id="loginButton" disabled>
+                <div id="loginButtonContent">
+                    로그인
+                    <div class="circle-loader">
+                        <div class="checkmark draw"></div>
+                    </div>
+                    <!--<div class="spinningCircle" id="loginSpinner"></div>-->
+                </div>
+            </button>
+        </form>
+    </div>
+    <script src="./assets/js/scripts/login.js"></script>
+</div>

@@ -1,0 +1,51 @@
+appId: 'beelauncher'
+productName: 'Bee Launcher'
+artifactName: '${productName}-setup-${version}.${ext}'
+
+copyright: 'Copyright © 2021-2022 Karu Han'
+
+asar: true
+compression: 'maximum'
+
+files:
+  - '!{dist,.gitignore,.vscode,docs,dev-app-update.yml,.nvmrc,.eslintrc.json}'
+
+extraResources:
+  - 'libraries'
+
+# Windows Configuration
+win: 
+  target: 
+    - target: 'nsis'
+      arch: 'x64'
+
+# Windows Installer Configuration
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+
+# macOS Configuration
+mac:
+  target:
+    - target: 'dmg'
+      arch:
+        - 'x64'
+        - 'arm64'
+  artifactName: '${productName}-setup-${version}-${arch}.${ext}'
+  category: 'public.app-category.games'
+
+# Linux Configuration
+linux: 
+  target: 'AppImage'
+  maintainer: 'Karu Han'
+  vendor: 'Karu Han'
+  synopsis: 'Bee Online Minecraft Launcher'
+  description: 'A launcher for Bee Online which is modded'
+  category: 'Game'
+
+
+directories:
+  buildResources: 'build'
+  output: 'dist'
