@@ -5,9 +5,9 @@
   "description": "Bee Online Minecraft Launcher",
   "author": "Karu Han (https://github.com/karu724)",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/karu724/BeeLauncherDistribution",
+  "homepage": "https://github.com/karu724/BeeLauncher",
   "bugs": {
-    "url": "https://github.com/karu724/BeeLauncherDistribution/issues"
+    "url": "https://github.com/karu724/BeeLauncher/issues"
   },
   "private": true,
   "main": "index.js",
@@ -53,6 +53,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/karu724/BeeLauncherDistribution.git"
+    "url": "git+https://github.com/karu724/BeeLauncher.git"
   }
 }
