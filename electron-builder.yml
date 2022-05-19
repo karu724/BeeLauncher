@@ -1,5 +1,5 @@
 appId: 'beelauncher'
-productName: 'Bee Launcher'
+productName: 'BeeLauncher'
 artifactName: '${productName}-setup-${version}.${ext}'
 
 copyright: 'Copyright © 2021-2022 Han Karu'
