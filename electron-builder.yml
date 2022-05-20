@@ -31,8 +31,9 @@ mac:
   target:
     - target: 'dmg'
       arch:
-        - 'universal'
-  artifactName: '${productName}-setup-${version}.${ext}'
+        - 'x64'
+        - 'arm64'
+  artifactName: '${productName}-setup-${version}-${arch}.${ext}'
   category: 'public.app-category.games'
 
 # Linux Configuration
