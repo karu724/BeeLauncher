@@ -1,6 +1,6 @@
 {
   "name": "beelauncher",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "productName": "Bee Launcher",
   "description": "Bee Online Minecraft Launcher",
   "author": "Karu Han (https://github.com/karu724)",
@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "electron": "^18.1.0",
-    "electron-builder": "^23.0.3",
+    "electron-builder": "23.0.4",
     "eslint": "^8.12.0"
   },
   "repository": {
