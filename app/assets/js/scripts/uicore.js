@@ -57,7 +57,7 @@ if(!isDev){
                 loggerAutoUpdaterSuccess.log('New update available', info.version)
                 
                 if(process.platform === 'darwin'){
-                    info.darwindownload = `https://github.com/karu724/BeeLauncher/releases/download/v${info.version}/Bee-Launcher-setup.dmg
+                    info.darwindownload = `https://github.com/karu724/BeeLauncher/releases/download/v${info.version}/Bee-Launcher-setup.dmg`
                     showUpdateUI(info)
                 }
                 
