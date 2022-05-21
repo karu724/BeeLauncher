@@ -2874,6 +2874,13 @@ input:checked + .toggleSwitchSlider:before {
     font-family: 'G-middle';
 }
 
+#m_announce > div {
+    display: none; /* none -> block */
+    text-decoration: none;
+    color: white;
+    font-family: 'G-middle';
+}
+
 #landing_sidemenu {
     width: 75px;
     height: 721px;
