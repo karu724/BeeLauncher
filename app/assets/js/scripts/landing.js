@@ -659,7 +659,7 @@ function dlAsync(login = true){
                 const onLoadComplete = () => {
                     toggleLaunchArea(false)
                     if(hasRPC){
-                        DiscordWrapper.updateDetails('Loading game..')
+                        DiscordWrapper.updateDetails('게임 시작 중..')
                     }
                     proc.stdout.on('data', gameStateChange)
                     proc.stdout.removeListener('data', tempListener)
@@ -685,11 +685,7 @@ function dlAsync(login = true){
                 // Listener for Discord RPC.
                 const gameStateChange = function(data){
                     data = data.trim()
-                    if(SERVER_JOINED_REGEX.test(data)){
-                        DiscordWrapper.updateDetails('Exploring the Realm!')
-                    } else if(GAME_JOINED_REGEX.test(data)){
-                        DiscordWrapper.updateDetails('Sailing to Westeros!')
-                    }
+                    DiscordWrapper.updateDetails('꿀벌온라인을 탐험 하는 중')
                 }
 
                 const gameErrorListener = function(data){
@@ -712,16 +708,14 @@ function dlAsync(login = true){
 
                     // Init Discord Hook
                     const distro = DistroManager.getDistribution()
-                    if(distro.discord != null && serv.discord != null){
-                        DiscordWrapper.initRPC(distro.discord, serv.discord)
-                        hasRPC = true
-                        proc.on('close', (code, signal) => {
-                            loggerLaunchSuite.log('Shutting down Discord Rich Presence..')
-                            DiscordWrapper.shutdownRPC()
-                            hasRPC = false
-                            proc = null
-                        })
-                    }
+                    DiscordWrapper.initRPC(distro.discord, serv.discord)
+                    hasRPC = true
+                    proc.on('close', (code, signal) => {
+                        loggerLaunchSuite.log('Shutting down Discord Rich Presence..')
+                        DiscordWrapper.shutdownRPC()
+                        hasRPC = false
+                        proc = null
+                    })
 
                 } catch(err) {
 
