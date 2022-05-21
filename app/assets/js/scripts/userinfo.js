@@ -1,5 +1,3 @@
-const axios = require('axios');
-
 const authAccounts = ConfigManager.getAuthAccounts()
 const authKeys = Object.keys(authAccounts)
 const selectedUUID = ConfigManager.getSelectedAccount().uuid

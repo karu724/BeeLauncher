@@ -30,7 +30,6 @@ window.eval = global.eval = function () {
 // Display warning when devtools window is opened.
 remote.getCurrentWebContents().on('devtools-opened', () => {
     setTimeout(function(){
-        console.clear()
         console.log('%c조심하시는게 좋을겁니다.', 'color: white; -webkit-text-stroke: 4px #a02d2a; font-size: 60px; font-weight: bold')
         console.log('%c개발자나 관리자가 아닌 누군가 여기에 무언가를 붙여넣으라고 했으면 하지마세요.', 'font-size: 16px')
         console.log('%c당신이 이게 무엇인지 모르면 닫는것이 좋을겁니다.', 'font-size: 16px')
@@ -51,13 +50,13 @@ if(!isDev){
         switch(arg){
             case 'checking-for-update':
                 loggerAutoUpdater.log('Checking for update..')
-                settingsUpdateButtonStatus('Checking for Updates..', true)
+                settingsUpdateButtonStatus('업데이트 확인 중..', true)
                 break
             case 'update-available':
                 loggerAutoUpdaterSuccess.log('New update available', info.version)
                 
                 if(process.platform === 'darwin'){
-                    info.darwindownload = `https://github.com/karu724/BeeLauncher/releases/download/v${info.version}/Bee-Launcher-setup.dmg`
+                    info.darwindownload = `https://github.com/karu724/BeeLauncher/releases/download/v${info.version}/Bee-Launcher-setup-${info.version}${process.arch === 'arm64' ? '-arm64' : '-x64'}.dmg`
                     showUpdateUI(info)
                 }
                 
@@ -65,7 +64,7 @@ if(!isDev){
                 break
             case 'update-downloaded':
                 loggerAutoUpdaterSuccess.log('Update ' + info.version + ' ready to be installed.')
-                settingsUpdateButtonStatus('Install Now', false, () => {
+                settingsUpdateButtonStatus('설치하기', false, () => {
                     if(!isDev){
                         ipcRenderer.send('autoUpdateAction', 'installUpdateNow')
                     }
@@ -74,7 +73,7 @@ if(!isDev){
                 break
             case 'update-not-available':
                 loggerAutoUpdater.log('No new update found.')
-                settingsUpdateButtonStatus('Check for Updates')
+                settingsUpdateButtonStatus('업데이트 확인')
                 break
             case 'ready':
                 updateCheckListener = setInterval(() => {
