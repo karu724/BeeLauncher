@@ -1428,7 +1428,7 @@ function populateReleaseNotes(){
         },
         timeout: 2500
     }).catch(err => {
-        settingsAboutChangelogText.innerHTML = 'Failed to load release notes.'
+        settingsAboutChangelogText.innerHTML = '릴리즈 노트를 불러오지 못했습니다.'
     })
 }
 
