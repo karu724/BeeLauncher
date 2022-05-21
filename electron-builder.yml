@@ -34,7 +34,6 @@ mac:
         - 'x64'
         - 'arm64'
   artifactName: '${productName}-setup-${version}-${arch}.${ext}'
-  artifactName: '${productName}-setup-${version}.${ext}'
   category: 'public.app-category.games'
 
 # Linux Configuration
