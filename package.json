@@ -14,9 +14,9 @@
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder build",
-    "dist:win": "npm run dist -- -w",
-    "dist:mac": "npm run dist -- -m",
-    "dist:linux": "npm run dist -- -l",
+    "dist:win": "npm run dist -- -w -p always",
+    "dist:mac": "npm run dist -- -m -p always",
+    "dist:linux": "npm run dist -- -l -p always",
     "lint": "eslint --config .eslintrc.json ."
   },
   "engines": {
@@ -53,6 +53,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/karu724/BeeLauncher.git"
+    "url": "git+https://github.com/karu724/BeeLauncherDistribution.git"
   }
 }
