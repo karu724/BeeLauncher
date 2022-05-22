@@ -1348,6 +1348,7 @@ body, button {
 }
 
 #banner1 {
+    transition: 0.5s ease;
     transform: translate(137px, 183px);
     width: 540px;
     height: 174px;
@@ -1356,6 +1357,7 @@ body, button {
 }
 
 #banner2 {
+    transition: 0.5s ease;
     transform: translate(137px, 355px);
     width: 540px;
     height: 174px;
@@ -1364,6 +1366,7 @@ body, button {
 }
 
 #banner3 {
+    transition: 0.5s ease;
     transform: translate(677px, 183px);
     width: 540px;
     height: 174px;
@@ -1372,6 +1375,7 @@ body, button {
 }
 
 #banner4 {
+    transition: 0.5s ease;
     transform: translate(677px, 355px);
     width: 540px;
     height: 174px;
@@ -4451,4 +4455,8 @@ input:checked + .toggleSwitchSlider:before {
 
 #loginPasswordError {
     top: 5px;
+}
+
+#banner1:hover, #banner2:hover, #banner3:hover, #banner4:hover {
+    opacity: 1;
 }
