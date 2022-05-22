@@ -1385,7 +1385,7 @@ function isPrerelease(version){
 function populateVersionInformation(version, valueElement, titleElement, checkElement){
     valueElement.innerHTML = version
     if(isPrerelease(version)){
-        titleElement.innerHTML = 'Pre-release'
+        titleElement.innerHTML = '프리뷰 버전'
         titleElement.style.color = '#ff886d'
         checkElement.style.background = '#ff886d'
     } else {
@@ -1476,7 +1476,7 @@ function settingsUpdateButtonStatus(text, disabled = false, handler = null){
  */
 function populateSettingsUpdateInformation(data){
     if(data != null){
-        settingsUpdateTitle.innerHTML = `새로운 ${isPrerelease(data.version) ? 'Pre-release' : 'Release'} 사용가능`
+        settingsUpdateTitle.innerHTML = `새로운 ${isPrerelease(data.version) ? '프리뷰 버전' : '정식 버전'} 사용가능`
         settingsUpdateChangelogCont.style.display = null
         settingsUpdateChangelogTitle.innerHTML = data.releaseName
         settingsUpdateChangelogText.innerHTML = data.releaseNotes
