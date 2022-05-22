@@ -764,7 +764,7 @@ body, button {
     width: 100%;
     text-align: right;
     position: absolute;
-    top: 7px;
+    top: 0px;
     opacity: 0;
     transition: 0.25s ease;
 }
@@ -4447,4 +4447,8 @@ input:checked + .toggleSwitchSlider:before {
 /* Class which is applied when the spinner image is spinning. */
 .rotating {
     animation: rotating 10s linear infinite;
+}
+
+#loginPasswordError {
+    top: 5px;
 }
