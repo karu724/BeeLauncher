@@ -229,6 +229,19 @@ loginButton.addEventListener('click', () => {
             }
         }
 
+        actualDisplayableError.title = '로그인 중 오류'
+        switch (actualDisplayableError.desc) {
+            case 'Username/password was not submitted or password is less than 3 characters.':
+                actualDisplayableError.desc = '이메일/비밀번호가 입력되지 않았거나 비밀번호가 3글자 미만입니다.'
+                break
+            case 'The email or password you\'ve entered is incorrect. Please try again.':
+                actualDisplayableError.desc = '입력한 이메일 또는 비밀번호가 올바르지 않습니다. 다시 시도해 주세요.'
+                break
+            default:
+                actualDisplayableError.desc = '오류 내용 : ' + actualDisplayableError.desc
+                break 
+        }
+
         setOverlayContent(actualDisplayableError.title, actualDisplayableError.desc, Lang.queryJS('login.tryAgain'))
         setOverlayHandler(() => {
             formDisabled(false)
