@@ -355,9 +355,9 @@ ipcRenderer.on(MSFT_OPCODE.REPLY_LOGIN, (_, ...arguments_) => {
 
             // Unexpected error.
             setOverlayContent(
-                'Something Went Wrong',
-                'Microsoft authentication failed. Please try again.',
-                'OK'
+                '문제가 발생했습니다.',
+                '마이크로소프트 인증에 실패했습니다. 다시 시도해 주세요.',
+                '확인'
             )
             setOverlayHandler(() => {
                 toggleOverlay(false)
@@ -382,7 +382,7 @@ ipcRenderer.on(MSFT_OPCODE.REPLY_LOGIN, (_, ...arguments_) => {
                 setOverlayContent(
                     error,
                     errorDesc,
-                    'OK'
+                    '확인'
                 )
                 setOverlayHandler(() => {
                     toggleOverlay(false)
@@ -882,9 +882,9 @@ function bindDropinModsRemoveButton(){
                 document.getElementById(fullName).remove()
             } else {
                 setOverlayContent(
-                    `Failed to Delete<br>Drop-in Mod ${fullName}`,
-                    'Make sure the file is not in use and try again.',
-                    'Okay'
+                    `삭제 실패<br>Drop-in Mod ${fullName}`,
+                    '파일이 사용 중이 아닌지 확인하고 다시 시도하십시오.',
+                    '확인'
                 )
                 setOverlayHandler(null)
                 toggleOverlay(true)
