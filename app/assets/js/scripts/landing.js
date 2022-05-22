@@ -231,7 +231,7 @@ const refreshServerStatus = async function(fade = false){
     try {
         const serverURL = new URL('my://' + serv.getAddress())
 
-        const servStat = await getServerStatus(47, serverURL.hostname, Number(serverURL.port))
+        const servStat = await getServerStatus(47, serverURL.hostname, 25565)
         console.log(servStat)
         pLabel = '명 접속중'
         pVal = servStat.players.online + '/' + servStat.players.max
