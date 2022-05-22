@@ -4458,5 +4458,5 @@ input:checked + .toggleSwitchSlider:before {
 }
 
 #banner1:hover, #banner2:hover, #banner3:hover, #banner4:hover {
-    opacity: 1;
+    opacity: 0.5;
 }
