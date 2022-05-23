@@ -155,19 +155,37 @@ async function updateList() {
         const article = await commonAnnounceList.getArticle(i)
         console.log(article)
         cAnnounceEl.children[i].innerText = article.name
+        cAnnounceEl.children[i].onclick = (e) => {
+            shell.openExternal(article.href)
+        }
     }
 
     for (let i = 0; i < 5; i++) {
         const article = await maintainanceAnnounceList.getArticle(i)
         console.log(article)
         mAnnounceEl.children[i].innerText = article.name
+        mAnnounceEl.children[i].onclick = (e) => {
+            shell.openExternal(article.href)
+        }
     }
 }
 
 updateList()
 setInterval(updateList, 5*60_000)
 
+let announce_buttonclick = false
+
 document.getElementById('announce_button').onclick = (e) => {
-    // eslint-disable-next-line quotes
-    alert(`죄송합니다!\n현재 기능은 개발중입니다!`)
+    announce_buttonclick = announce_buttonclick == true ? false : true
+    if (announce_buttonclick == true) {
+        $('#announce1').css('display','')
+        $('#announce2').css('display','')
+        $('#announce3').css('display','')
+        $('#announce4').css('display','')
+    } else {
+        $('#announce1').css('display','none')
+        $('#announce2').css('display','none')
+        $('#announce3').css('display','none')
+        $('#announce4').css('display','none')
+    }
 }
