@@ -367,18 +367,19 @@ ipcRenderer.on(MSFT_OPCODE.REPLY_LOGIN, (_, ...arguments_) => {
     } else if(arguments_[0] === MSFT_REPLY_TYPE.SUCCESS) {
         const queryMap = arguments_[1]
         const viewOnClose = arguments_[2]
-
+        let error = queryMap.error // Error might be 'access_denied' ?
+        let errorDesc = queryMap.error_description
         // Error from request to Microsoft.
-        if (Object.prototype.hasOwnProperty.call(queryMap, 'error')) {
+        if (Object.prototype.hasOwnProperty.call(queryMap, error)) {
             switchView(getCurrentView(), viewOnClose, 500, 500, () => {
                 // TODO Dont know what these errors are. Just show them I guess.
                 // This is probably if you messed up the app registration with Azure.
                 console.log('Error getting authCode, is Azure application registered correctly?')
                 console.log(error)
-                console.log(error_description)
+                console.log(queryMap.error_description)
                 console.log('Full query map', queryMap)
-                let error = queryMap.error // Error might be 'access_denied' ?
-                let errorDesc = queryMap.error_description
+                console.log('Full query map: ', + queryMap)
+                
                 setOverlayContent(
                     error,
                     errorDesc,
