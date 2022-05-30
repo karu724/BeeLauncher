@@ -1,3 +1,7 @@
+const axios = require('axios')
+const cheerio = require('cheerio')
+const iconv = require('iconv-lite')
+
 const authAccounts = ConfigManager.getAuthAccounts()
 const authKeys = Object.keys(authAccounts)
 const selectedUUID = ConfigManager.getSelectedAccount().uuid

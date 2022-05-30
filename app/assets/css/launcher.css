@@ -234,6 +234,17 @@ body, button {
  *                                                                             *
  ******************************************************************************/
 
+#welcomeBG {
+    height: 728px;
+    width: 1282px;
+    position: absolute;
+    transform: translate(-1px, -15px);
+    -webkit-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-app-region: no-drag;
+	cursor: default;
+}
+
 #welcomeContainer {
     position: relative;
     display: flex;
@@ -337,6 +348,10 @@ body, button {
     position: absolute;
     width: 1280px;
     height: 698px;
+    -webkit-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-app-region: no-drag;
+	cursor: default;
 }
 
 /* Login button styles. */
@@ -345,10 +360,17 @@ body, button {
     font-weight: bold;
     letter-spacing: 2px;
     border: none;
+    font-size: 18px;
     padding: 15px 5px;
+    transform: translate(-262px, 222px);
+    font-family: 'G-bold';
+    border: 2px solid #cad7e1;
     margin: 10px 0px;
+    border-radius: 20px;
     cursor: pointer;
-    position: relative;
+    position: absolute;
+    background-color: black;
+    height: 50px;
     right: -20px;
     transition: 0.5s ease;
     margin-top: 5%;
@@ -1267,7 +1289,7 @@ body, button {
     border: none;
     width: 200px;
     height: 200px;
-    transform: translate(-331px, 102px);
+    transform: translate(-331px, 41px);
 }
 
 #loginOptionMojang:hover {
@@ -1279,7 +1301,7 @@ body, button {
     background-color: transparent;
     border: none;
     width: 200px;
-    transform: translate(125px, 111px);
+    transform: translate(125px, 54px);
     height: 200px;
 }
 
@@ -1349,38 +1371,34 @@ body, button {
 
 #banner1 {
     transition: 0.5s ease;
-    transform: translate(137px, 183px);
-    width: 540px;
-    height: 174px;
+    transform: translate(134px, 180px);
+    width: 438px;
+    height: 334px;
     position: absolute;
-    background: linear-gradient( 315deg, rgb(254, 208, 114) 0%, rgb(255, 146, 66) 75% );
 }
 
 #banner2 {
     transition: 0.5s ease;
-    transform: translate(137px, 355px);
-    width: 540px;
-    height: 174px;
+    transform: translate(572px, 180px);
+    width: 629px;
+    height: 113px;
     position: absolute;
-    background: linear-gradient( 315deg, rgb(254, 208, 114) 0%, rgb(255, 146, 66) 75% );
 }
 
 #banner3 {
     transition: 0.5s ease;
-    transform: translate(677px, 183px);
-    width: 540px;
-    height: 174px;
+    transform: translate(572px, 293px);
+    width: 629px;
+    height: 113px;
     position: absolute;
-    background: linear-gradient( 135deg, rgb(254, 208, 114) 0%, rgb(251, 146, 66) 90% );
 }
 
 #banner4 {
     transition: 0.5s ease;
-    transform: translate(677px, 355px);
-    width: 540px;
-    height: 174px;
+    transform: translate(572px, 401px);
+    width: 629px;
+    height: 113px;
     position: absolute;
-    background: linear-gradient( 135deg, rgb(254, 208, 114) 0%, rgb(251, 146, 66) 90% );
 }
 
 #banner_img1 {
@@ -1441,9 +1459,13 @@ body, button {
     background: none;
     width: auto;
     height: auto;
+    position: absolute;
+    font-size: 18px;
     outline: none;
+    color: black;
+    font-family: 'G-bold';
     border: none;
-    transform: translate(15px, 298px);
+    transform: translate(876px, 99px);
 }
 
 #settingsMediaButton:hover {
@@ -1543,7 +1565,7 @@ body, button {
     text-align: left;
     margin: 5px 0px;
     padding: 0px 20px;
-    color: grey;
+    color: rgb(100,100,100);
     cursor: pointer;
     outline: none;
     transition: 0.25s ease;
@@ -2891,6 +2913,58 @@ input:checked + .toggleSwitchSlider:before {
     background-color: white;
 }
 
+#notready1, #notready2 {
+    color: black;
+    font-family: 'G-middle';
+    position: absolute;
+}
+
+#notready1 {
+    transform: translate(184px, 118px);
+}
+
+#notready2 {
+    transform: translate(184px, 76px);
+}
+
+#mainpg_img {
+    -webkit-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-app-region: no-drag;
+    transform: translate(557px, 20px);
+    width: 150px;
+    
+}
+
+#MinePage, #Discord, #NaverCafe {
+    text-decoration: none;
+    color: black;
+    font-family: 'G-bold';
+    font-size: 18px;
+    position: absolute;
+}
+
+#MinePage:hover, #Discord:hover, #NaverCafe:hover, #settingsMediaButton:hover {
+    color: rgba(100, 100, 100, 1);
+    filter: blur(0px) contrast(0.9) brightness(1.0);
+}
+
+#NaverCafe {
+    transform: translate(340px, 99px);
+}
+
+#Discord {
+    transform: translate(453px, 99px);
+}
+
+#MinePage {
+    transform: translate(731px, 99px);
+}
+
+#menu {
+    position: absolute;
+}
+
 /* Main content container. */
 #landingContainer {
     height: 100%;
@@ -3320,7 +3394,8 @@ input:checked + .toggleSwitchSlider:before {
     180deg,
     rgb(254, 208, 114) 0%,
     rgb(251, 146, 66) 90%
-  );
+    );
+    display: none;
 }
 
 /* Logo container styles w/ update. */
@@ -3422,10 +3497,10 @@ input:checked + .toggleSwitchSlider:before {
 
 /* User profile avatar container. */
 #avatarContainer {
-    background-color: white;
     box-sizing: border-box;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    transform: translate(812px, 42px);
+    width: 40px;
     overflow: hidden;
     position: relative;
     background-position: center;
@@ -3441,10 +3516,6 @@ input:checked + .toggleSwitchSlider:before {
 
 #user_menu {
     position: absolute;
-    width: 200px;
-    height: 75px;
-    transform: translate(-74px, 3px);
-    background: linear-gradient( 90deg, rgb(254, 208, 114) 0%, rgb(255, 146, 66) 75% );
 }
 
 /* Avatar edit overlay. */
@@ -3475,15 +3546,15 @@ input:checked + .toggleSwitchSlider:before {
 
 /* User profile name text. */
 #user_text {
-    font-size: 15px;
+    font-size: 16px;
     min-width: 135px;
     font-weight: 900;
     font-family: 'G-bold';
     letter-spacing: 1px;
-    text-shadow: 0px 0px 10px black;
     position: absolute;
     right: 95px;
-    transform: translate(231px, 0px);
+    color: black;
+    transform: translate(1053px, 41px);
     text-align: center;
     -webkit-user-select: initial;
 }
@@ -3688,6 +3759,7 @@ input:checked + .toggleSwitchSlider:before {
     transform: translate(882px, -459px);
     position: absolute;
     margin-left: 10px;
+    display: none;
 }
 
 #landingPlayerLabel {
@@ -3875,21 +3947,21 @@ input:checked + .toggleSwitchSlider:before {
 
 /* The launch button. */
 #launch_button {
-    background: linear-gradient( 90deg, rgb(254, 208, 114) 0%, rgb(255, 146, 66) 75% );
+    background: linear-gradient( 90deg, rgb(100, 100, 100) 0%, rgb(0, 0, 0) 75% );
     border: none;
     cursor: pointer;
     font-weight: 800;
     letter-spacing: 5px;
     text-shadow: 0px 0px 0px #bebcbb;
-    font-size: 75.5px;
+    font-size: 50px;
     font-family: 'G-bold';
     padding: 0px;
     transition: 0.25s ease;
     outline: none;
-    box-shadow: #4448 0 0 10px inset;
-    WIDTH: 356px;
-    HEIGHT: 100px;
-    transform: translate(-350px, 0px);
+    WIDTH: 305px;
+    border-radius: 33px;
+    HEIGHT: 70px;
+    transform: translate(-361px, -16px);
     position: absolute;
 }
 #launch_button:hover,

@@ -1,3 +1,8 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable quotes */
+/* eslint-disable linebreak-style */
+/* eslint-disable semi */
+/* eslint-disable linebreak-style */
 async function banner() {
     const result = await axios.get("https://raw.githubusercontent.com/karu724/BeeLauncherDistribution/main/banner.json");
     console.log(JSON.stringify(result))
