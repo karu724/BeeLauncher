@@ -192,7 +192,7 @@ document.addEventListener('readystatechange', function () {
         //const targetWidth3 = document.getElementById("launch_button").getBoundingClientRect().width
 
         document.getElementById('launch_details').style.maxWidth = 266.01
-        document.getElementById('launch_progress').style.width = 170.8
+        document.getElementById('launch_progress').style.width = 1278.8
         document.getElementById('launch_details_right').style.maxWidth = 170.8
         document.getElementById('launch_progress_label').style.width = 53.21
         

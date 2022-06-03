@@ -3980,9 +3980,10 @@ input:checked + .toggleSwitchSlider:before {
 
 /* Launch details main container, hidden until launch processing begins. */
 #launch_details {
-    position: relative;
+    position: absolute;
     top: 25px;
     display: none;
+    color: black;
 }
  
 /* Left side of launch details container, displays percentage and a divider. */
@@ -3994,7 +3995,7 @@ input:checked + .toggleSwitchSlider:before {
 #launch_progress_label {
     font-weight: 900;
     letter-spacing: 1px;
-    text-shadow: 0px 0px 0px #bebcbb;
+    text-shadow: 0px 0px 0px #000000;
     font-size: 20px;
     min-width: 53.21px;
     max-width: 53.21px;
@@ -4030,8 +4031,10 @@ input:checked + .toggleSwitchSlider:before {
 
 /* Progress bar styles. */
 #launch_progress[value] {
-    height: 3px;
+    height: 20px;
     width: 265px;
+    position: absolute;
+    transform: translate(-952px, 112px);
     -webkit-appearance: none;
 }
 #launch_progress[value]::-webkit-progress-bar {
