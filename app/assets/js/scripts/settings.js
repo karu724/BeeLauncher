@@ -335,7 +335,7 @@ document.getElementById('settingsAddMojangAccount').onclick = (e) => {
 // Bind the add microsoft account button.
 document.getElementById('settingsAddMicrosoftAccount').onclick = (e) => {
     switchView(getCurrentView(), VIEWS.waiting, 500, 500, () => {
-        ipcRenderer.send(MSFT_OPCODE.OPEN_LOGIN, VIEWS.settings, VIEWS.settings)
+        ipcRenderer.send(MSFT_OPCODE.OPEN_LOGIN, VIEWS.landing, VIEWS.settings)
     })
 }
 
@@ -364,7 +364,8 @@ ipcRenderer.on(MSFT_OPCODE.REPLY_LOGIN, (_, ...arguments_) => {
             })
             toggleOverlay(true)
         })
-    } else if(arguments_[0] === MSFT_REPLY_TYPE.SUCCESS) {
+    } else if (arguments_[0] === MSFT_REPLY_TYPE.SUCCESS) {
+        document.getElementById('waitingText').innerHTML = '마이크로소프트로 부터 계정 정보 대기 중.'
         const queryMap = arguments_[1]
         const viewOnClose = arguments_[2]
         let error = queryMap.error // Error might be 'access_denied' ?
@@ -376,7 +377,7 @@ ipcRenderer.on(MSFT_OPCODE.REPLY_LOGIN, (_, ...arguments_) => {
                 // This is probably if you messed up the app registration with Azure.
                 console.log('Error getting authCode, is Azure application registered correctly?')
                 console.log(error)
-                console.log(queryMap.error_description)
+                console.log(queryMap.error_Decs)
                 console.log('Full query map', queryMap)
                 console.log('Full query map: ', + queryMap)
                 
@@ -388,7 +389,7 @@ ipcRenderer.on(MSFT_OPCODE.REPLY_LOGIN, (_, ...arguments_) => {
                 setOverlayHandler(() => {
                     toggleOverlay(false)
                 })
-                toggleOverlay(true)
+                if (errorDesc !== 'The user has denied access to the scope requested by the client application.') toggleOverlay(true)//If the user clicks "Back" button and closes the window
 
             })
         } else {
@@ -397,6 +398,7 @@ ipcRenderer.on(MSFT_OPCODE.REPLY_LOGIN, (_, ...arguments_) => {
 
             const authCode = queryMap.code
             AuthManager.addMicrosoftAccount(authCode).then(value => {
+                document.getElementById('waitingText').innerHTML = '완료'
                 updateSelectedAccount(value)
                 switchView(getCurrentView(), viewOnClose, 500, 500, () => {
                     prepareSettings()
@@ -501,6 +503,7 @@ function processLogOut(val, isLastAccount){
     if(targetAcc.type === 'microsoft') {
         msAccDomElementCache = parent
         switchView(getCurrentView(), VIEWS.waiting, 500, 500, () => {
+            document.getElementById('waitingText').innerHTML = '런처에서 계정 삭제 중..' //We actually don't have to wait anything from Mirosoft
             ipcRenderer.send(MSFT_OPCODE.OPEN_LOGOUT, uuid, isLastAccount)
         })
     } else {
@@ -511,16 +514,16 @@ function processLogOut(val, isLastAccount){
                 updateSelectedAccount(selAcc)
                 validateSelectedAccount()
             }
-            if(isLastAccount) {
-                loginOptionsCancelEnabled(false)
-                loginOptionsViewOnLoginSuccess = VIEWS.settings
-                loginOptionsViewOnLoginCancel = VIEWS.loginOptions
-                switchView(getCurrentView(), VIEWS.loginOptions)
-            }
+            $(parent).fadeOut(250, () => {
+                parent.remove()
+            })
         })
-        $(parent).fadeOut(250, () => {
-            parent.remove()
-        })
+        if (isLastAccount) {
+            loginOptionsCancelEnabled(false)
+            loginOptionsViewOnLoginSuccess = VIEWS.landing
+            loginOptionsViewOnLoginCancel = VIEWS.loginOptions
+            switchView(getCurrentView(), VIEWS.loginOptions)
+        }
     }
 }
 
@@ -564,7 +567,7 @@ ipcRenderer.on(MSFT_OPCODE.REPLY_LOGOUT, (_, ...arguments_) => {
                 }
                 if(isLastAccount) {
                     loginOptionsCancelEnabled(false)
-                    loginOptionsViewOnLoginSuccess = VIEWS.settings
+                    loginOptionsViewOnLoginSuccess = VIEWS.landing
                     loginOptionsViewOnLoginCancel = VIEWS.loginOptions
                     switchView(getCurrentView(), VIEWS.loginOptions)
                 }
