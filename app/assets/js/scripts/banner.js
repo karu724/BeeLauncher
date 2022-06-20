@@ -5,9 +5,7 @@
 /* eslint-disable linebreak-style */
 async function banner() {
     const result = await axios.get("https://raw.githubusercontent.com/karu724/BeeLauncherDistribution/main/banner.json");
-    console.log(JSON.stringify(result))
     const data = result.data
-    console.log(data.banner1.img)
 
     const banner1 = document.getElementById('banner1');
     const banner2 = document.getElementById('banner2');

@@ -34,7 +34,7 @@ remote.getCurrentWebContents().on('devtools-opened', () => {
         console.log('%c개발자나 관리자가 아닌 누군가 여기에 무언가를 붙여넣으라고 했으면 하지마세요.', 'font-size: 16px')
         console.log('%c당신이 이게 무엇인지 모르면 닫는것이 좋을겁니다.', 'font-size: 16px')
         console.log('%c만약 오류를 전송하기 위해 콘솔을 켰으나 지워졌다면, 콘솔을 연 채로 다시 시도하세요.', 'font-size: 13px')
-        console.log('%c임금을 받고싶은 나', 'font-size: 8px')
+        // console.log('%c임금을 받고싶은 나', 'font-size: 8px') Karu, I'm not.
     }, 1500)
     
 })
