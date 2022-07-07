@@ -158,11 +158,11 @@ async function updateList() {
         mAnnounceEl.children[i].innerText = article.name	
     }	
 }	
-
+/*
 updateList()	
 setInterval(updateList, 5*60_000)	
 
 document.getElementById('announce_button').onclick = (e) => {	
     // eslint-disable-next-line quotes	
     alert(`죄송합니다!\n현재 기능은 개발중입니다!`)	
-} 	
+}*/
