@@ -538,7 +538,7 @@ exports.pullRemote = function(){
         return exports.pullLocal()
     }
     return new Promise((resolve, reject) => {
-        const distroURL = 'https://raw.githubusercontent.com/norhu1130/BeeServer-distributions/master/beeserver.json'
+        const distroURL = 'https://raw.githubusercontent.com/7days162/BeeServer-distributions/master/beeserver.json'
         const opts = {
             url: distroURL,
             timeout: 2500
